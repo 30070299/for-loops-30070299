@@ -1,22 +1,32 @@
-from random import randrange
+import random
 
 def task_1(): # Lottery ticket generator
+    tickets = []
 
-    ticket = []
+    for _ in range(6):
+        tickets.append(random.randint(1, 50))
 
-    # Code here
-    
-    return ticket
+    return tickets
 
 def task_2(): # Countdown
 
     output = []
 
-    # Code here
+    count = 100
+    num = int(input("Please enter a number less than 100: "))
+
+    while count > num:
+        output.append(count)
+        count -= 1
+
+    else:
+        output.append(num)
 
     return output
 
 def task_3():
+    
+
     people_cars = {
         "Adam": "Volvo",
         "Kate": "BMW",
@@ -26,8 +36,11 @@ def task_3():
         "Celine": "Fiat"
     }
 
-    car_make_lengths = ()
+    car_make_lengths = set()
 
-    # Code here
+    for i in people_cars.values():
+        car_make_lengths.add(len(i))
+    
+    print(f"There will be {len(car_make_lengths)} different sizes of key rings.")
 
-    return # Code the sentence here
+    return car_make_lengths
